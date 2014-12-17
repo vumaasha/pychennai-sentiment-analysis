@@ -90,6 +90,7 @@
         
     -->
     <link href="css/impress-demo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/bower_components/highlightjs/styles/github.css">
     
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -170,73 +171,130 @@
         <h3> Sentiments from movie reviews </h3>
         <blockquote class="positive">
             This movie is really not all that bad. But then again, this movie genre is right down my alley. Sure, the sets are cheap, but they really did decent with what they had. If you like cheap, futuristic, post-apocalyptic B movies, then you'll love this one!! I sure did!. It's a movie to keep you interested forever.</blockquote>
-    </div>
-
-    <div class="step slide" data-x="0" data-y="3100">
-        <h3> Sentiments from movie reviews </h3>
-        <blockquote class="negative">
-            This must be accompanied by a special rating and warning: NOT RECOMMENDED TO NORMAL PEOPLE.The obsession of Daneliuc with the most dirty body functions becomes here a real nightmare. Also, it's evident that the man is a misanthrope, he hates everybody - his country his people, his actors, his job. And this hatred makes him blind and he forgets anymore the profession he knew long ago.This so called ""film"" is just a hideous string of disgusting images, with no artistic value and no professionist knowledge. It is an insult to good taste and to good sense. Shame, shame, shame
-        </blockquote>
-    </div>
-
-    <div class="step slide" data-x="1500" data-y="2100" data-z="1000">
-        <h3> Preprocessing </h3>
-        <dl>
-            <dt><h4>Tokenization</h4></dt>
-            <dd> converting sentences in to words, removes punctuations and symbols </dd>
-            <dt><h4>stemming</h4></dt>
-            <dd> reducing the word to it's root. Running, runs, runner to run.</dd>
-            <dt><h4>Filter stop words</h4></dt>
-            <dd>remove useless words - as, from, on, the, to, in ... from the corpus</dd>
-            <dt><h4>Generate TF-IDF matrix</h4></dt>
-            <dd>computes term frequency and inverse document frequency for each word in the corpus</dd>
-        </dl>
-    </div>
-
-    <div class="step slide" data-x="1500" data-y="3100" data-z="1000" >
-        <h3>Preprocessed data set</h3>
-        <h4>Term frequency matrix</h4>
-        <div style="margin:-10%;">
-            <img src="img/prepdata.png">
         </div>
-    </div>
 
-    <div class="step slide" data-x="2500" data-y="2100" data-z="-1000">
-        <h3> Model Learning </h3>
-        <ol>
-        <li>Known as supervised classification/learning in the machine learning world</li>
-        <li>Given a labelled dataset, the task is to learn a function that will predict the label given the input</li>
-        <li>In this case we will learn a function predictReview(review as input)=>sentiment </li>
-        <li> Algorithms such as Decision tree, Naive Bayes, Support Vector Machines, etc.. can be used </li>
-        <li> scikit-learn has implementations of many classification algorithms out of the box </li>
-        </ol>
-    </div>
+        <div class="step slide" data-x="0" data-y="3100">
+            <h3> Sentiments from movie reviews </h3>
+            <blockquote class="negative">
+                This must be accompanied by a special rating and warning: NOT RECOMMENDED TO NORMAL PEOPLE.The obsession of Daneliuc with the most dirty body functions becomes here a real nightmare. Also, it's evident that the man is a misanthrope, he hates everybody - his country his people, his actors, his job. And this hatred makes him blind and he forgets anymore the profession he knew long ago.This so called ""film"" is just a hideous string of disgusting images, with no artistic value and no professionist knowledge. It is an insult to good taste and to good sense. Shame, shame, shame
+            </blockquote>
+        </div>
 
-    <div class="step slide" data-x="3500" data-y="2100" data-z="0">
-        <h3> Model validation </h3>
-        <ol>
-        <li>We have to validate if our model works</li>
-        <li>Split the labelled dataset in to 2 (60% - training, 40%-test)</li>
-        <li>Learn the model on the training dataset </li>
-        <li>Apply the model on the examples from test set and calculate the accuracy </li>
-        <li> Now, we have decent approximation of how our model would perform </li>
-        <li> This process is known as split validation </li>
-        <li> scikit-learn has implementations of validation techniques out of the box</li>
-        </ol>
-    </div>
+        <div class="step slide" data-x="1500" data-y="2100" data-z="1000">
+            <h3> Preprocessing </h3>
+            <dl>
+                <dt><h4>Tokenization</h4></dt>
+                <dd> converting sentences in to words, removes punctuations and symbols </dd>
+                <dt><h4>stemming</h4></dt>
+                <dd> reducing the word to it's root. Running, runs, runner to run.</dd>
+                <dt><h4>Filter stop words</h4></dt>
+                <dd>remove useless words - as, from, on, the, to, in ... from the corpus</dd>
+                <dt><h4>Generate TF-IDF matrix</h4></dt>
+                <dd>computes term frequency and inverse document frequency for each word in the corpus</dd>
+            </dl>
+        </div>
+
+        <div class="step slide" data-x="1500" data-y="3100" data-z="1000" >
+            <h3>Preprocessed data set</h3>
+            <h4>Term frequency matrix</h4>
+            <div style="margin:-10%;">
+                <img src="img/prepdata.png">
+            </div>
+        </div>
 
 
-    <div id="imagination" class="step" data-x="6700" data-y="-300" data-scale="6">
-        <p> The <b>Blackbox</b> is <b class="imagination">ready !!</b></p>
-    </div>
+        <div class="step slide" data-x="2500" data-y="2100" data-z="-1000">
+            <h3> Model Learning </h3>
+            <ol>
+                <li>Known as supervised classification/learning in the machine learning world</li>
+                <li>Given a labelled dataset, the task is to learn a function that will predict the label given the input</li>
+                <li>In this case we will learn a function predictReview(review as input)=>sentiment </li>
+                <li> Algorithms such as Decision tree, Naive Bayes, Support Vector Machines, etc.. can be used </li>
+                <li> scikit-learn has implementations of many classification algorithms out of the box </li>
+            </ol>
+        </div>
 
-    <div id="source" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
+        <div class="step slide" data-x="3500" data-y="2100" data-z="0">
+            <h3> Model validation </h3>
+            <ol>
+                <li>We have to validate if our model works</li>
+                <li>Split the labelled dataset in to 2 (60% - training, 40%-test)</li>
+                <li>Learn the model on the training dataset </li>
+                <li>Apply the model on the examples from test set and calculate the accuracy </li>
+                <li> Now, we have decent approximation of how our model would perform </li>
+                <li> This process is known as split validation </li>
+                <li> scikit-learn has implementations of validation techniques out of the box</li>
+            </ol>
+        </div>
+
+
+        <div id="imagination" class="step" data-x="6700" data-y="-300" data-scale="6">
+            <p> The <b>Blackbox</b> is <b class="imagination">ready !!</b></p>
+            <p> Let's take a look at the code </p>
+        </div>
+
+        <div id="preprocess-code" class="step slide" data-x="1500" data-y="4100" data-z="1000" >
+            <h3>preprocess</h3>
+            <pre><code class="python">
+                # load the data from labelled csv file and 
+                # create a term frequency matrix
+                def preprocess():
+                data,target = load_file()
+                count_vectorizer = CountVectorizer(binary='true')
+                data = count_vectorizer.fit_transform(data)
+                tfidf_data = TfidfTransformer(use_idf=False).
+                fit_transform(data)
+
+                return tfidf_data
+            </code></pre>
+        </div>
+
+        <div id="model-learning-code" class="step slide" data-x="2500" data-y="3100" data-z="-1000" >
+            <h3>learn model</h3>
+            <pre><code class="python">
+                def learn_model(data,target):
+                # preparing data for split validation.
+                # 60% training, 40% test and learning model
+                data_train,data_test,target_train,target_test = \
+                cross_validation.train_test_split(data,target,\
+                test_size=0.4,random_state=43)
+                classifier = BernoulliNB().fit(data_train,target_train)
+                predicted = classifier.predict(data_test)
+                evaluate_model(target_test,predicted)
+            </code></pre>
+        </div>
+
+        <div id="model-evaluation-code" class="step slide" data-x="3500" data-y="3100" data-z="0" >
+            <h3>evaluate model</h3>
+            <pre><code class="python">
+                # evaluating model performance
+                def evaluate_model(target_true,target_predicted):
+                print classification_report(target_true,\
+                target_predicted)
+            </code></pre>
+        </div>
+
+        <div id="classification-report" class="step slide" data-x="3500" data-y="4100" data-z="0" >
+        <h3>classification report</h3>
+            <pre><code>
+               precision    recall  f1-score   support
+
+               negative       0.71      0.91      0.80       409
+               positive       0.86      0.59      0.70       375
+
+               avg / total       0.78      0.76      0.75       784
+
+               The accuracy score is 75.89%
+           </code></pre>
+       </div>
+
+       <div id="source" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
         <p>want to see it work?</p>
         <q><a href="http://github.com/vumaasha/pychennai-sentiment-analysis">get the source from github and run it </a>, Luke!</q>
     </div>
 
     <div id="credit" class="step" data-x="6000" data-y="4000">
-    <p class="thoughts"> credit where credit's due </p>
+        <p class="thoughts"> credit where credit's due </p>
         <p><img src="http://xoanonanalytics.com/wp-content/uploads/2014/08/100x60.png"> <strong>Xoanon Analytics</strong> - for letting us work on interesting things</p>
         <p><strong>Arathi Arumugam</strong> - helped to develop the sample code</p>
     </div>
@@ -278,6 +336,8 @@
 -->
 <script src="js/impress.js"></script>
 <script>impress().init();</script>
+<script src="bower_components/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 <!--
     
