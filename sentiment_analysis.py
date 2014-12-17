@@ -10,6 +10,9 @@ from sklearn.metrics import classification_report
 import numpy as np
 from sklearn.metrics import accuracy_score
 
+# review.csv contains two columns
+# first column is the review content (quoted)
+# second column is the assigned sentiment (positive or negative)
 def load_file():
     with open('review.csv') as csv_file:
         reader = csv.reader(csv_file,delimiter=",",quotechar='"')
@@ -24,6 +27,7 @@ def load_file():
 
         return data,target
 
+# preprocess creates the term frequency matrix for the review data set
 def preprocess():
     data,target = load_file()
     count_vectorizer = CountVectorizer(binary='true')
@@ -39,9 +43,11 @@ def learn_model(data,target):
     predicted = classifier.predict(data_test)
     evaluate_model(target_test,predicted)
 
-
+# read more about model evaluation metrics here
+# http://scikit-learn.org/stable/modules/model_evaluation.html
 def evaluate_model(target_true,target_predicted):
     print classification_report(target_true,target_predicted)
+    print "The accuracy score is {:.2%}".format(accuracy_score(target_true,target_predicted))
 
 def main():
     data,target = load_file()
